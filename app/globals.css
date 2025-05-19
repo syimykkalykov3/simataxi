@@ -1,5 +1,8 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Tailwind Custom Variables & Base Styling */
 @layer base {
   :root {
     --background: 0 0% 0%;
@@ -23,18 +26,17 @@
     --ring: 50 100% 50%;
     --radius: 0.75rem;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* Professional Hero Background */
+/* Hero Background Effects */
 .hero-background {
   position: relative;
   width: 100%;
@@ -49,7 +51,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
   z-index: 1;
 }
 
@@ -57,50 +59,37 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05), transparent 70%);
   opacity: 0;
   animation: pulse 8s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.8); }
 }
 
 .traffic-lights {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 2%),
-    radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 2%);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.03), transparent 2%),
+    radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.03), transparent 2%);
   animation: flicker 10s linear infinite;
 }
 
 @keyframes flicker {
-  0%,
-  100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 1;
-  }
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
 }
 
 .yellow-glow {
